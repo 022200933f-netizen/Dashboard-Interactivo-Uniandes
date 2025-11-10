@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Model of Property Existence</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #171A21;
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(135deg, #171A21 0%, #1f2229 100%);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    header p {
+      color: #B8BCC8;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 30px;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 350px;
+      margin: 10px;
+    }
+
+    .card {
+      background-color: #2D2F36;
+      border: 1px solid #3A3D45;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    p {
+      color: #B8BCC8;
+      font-size: 13px;
+      margin: 0 0 15px 0;
+    }
+
+    label {
+      color: #B8BCC8;
+      font-size: 13px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      background-color: #23262F;
+      border: 1px solid #3A3D45;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .checkbox-group label {
+      background-color: #23262F;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #3A3D45;
+      margin-bottom: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #FFA400;
+      color: white;
+      font-weight: 700;
+      width: 100%;
+      padding: 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255,164,0,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .map-placeholder {
+      background-color: #23262F;
+      height: 300px;
+      border: 2px dashed #3A3D45;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #B8BCC8;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .result-box {
+      text-align: center;
+      background-color: #23262F;
+      border: 2px dashed #3A3D45;
+      border-radius: 12px;
+      padding: 60px 20px;
+      color: #B8BCC8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Predictive Model of Probability of Existence of Properties</h1>
+    <p>Intelligent Prediction of Property Existence Based on User Preferences</p>
+  </header>
+
+  <main>
+    <!-- Columna izquierda -->
+    <div class="column">
+      <div class="card">
+        <h3>States Map</h3>
+        <p>Visualization of states (placeholder)</p>
+        <div class="map-placeholder">[Map Placeholder]</div>
+      </div>
+
+      <div class="card">
+        <h3>City Location Map</h3>
+        <p>Selected city coordinates and location</p>
+        <div class="map-placeholder">[City Map Placeholder]</div>
+      </div>
+
+      <div class="card">
+        <h3>Price Range</h3>
+        <p>Real data range: $0 - $5000</p>
+        <input type="range" min="0" max="5000" step="100" value="2500" />
+        <div class="result-box" style="margin-top:20px;">$1500 - $2500</div>
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="column">
+      <div class="card">
+        <h3>Search Settings</h3>
+        <p>Complete the details of the desired property</p>
+
+        <label for="state">State</label>
+        <select id="state">
+          <option>Select a state</option>
+          <option>CA</option>
+          <option>TX</option>
+          <option>FL</option>
+        </select>
+
+        <label for="city">City</label>
+        <select id="city">
+          <option>Select a city</option>
+        </select>
+
+        <h3 style="color:#FFA400; border-bottom:2px solid #FFA400;">Amenities</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" /> Gym</label>
+          <label><input type="checkbox" /> Parking</label>
+          <label><input type="checkbox" /> Pool</label>
+          <label><input type="checkbox" /> Internet Access</label>
+          <label><input type="checkbox" /> Elevator</label>
+        </div>
+
+        <h3 style="color:#FFA400; border-bottom:2px solid #FFA400;">Pets Allowed</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" /> Dogs</label>
+          <label><input type="checkbox" /> Cats</label>
+        </div>
+
+        <h3 style="color:#FFA400; border-bottom:2px solid #FFA400;">Specifications</h3>
+        <label>Area (sq ft)</label>
+        <input type="number" value="800">
+
+        <label>Bedrooms</label>
+        <input type="number" value="2">
+
+        <label>Bathrooms</label>
+        <input type="number" step="0.5" value="1.5">
+
+        <button>Calculate Probability</button>
+      </div>
+
+      <div class="card">
+        <h3>Analysis Results</h3>
+        <p>Probability of availability based on your criteria</p>
+        <div class="result-box">
+          <p>Press "Calculate Probability" to see the results of the analysis</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
